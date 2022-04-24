@@ -1,0 +1,5 @@
+tinyTimeR 	KEYWORD1	tinyTimeR
+tr 			KEYWORD1 	tinyTimeR
+begin		KEYWORD2
+end			KEYWORD2
+OnTimerExec KEYWORD2
