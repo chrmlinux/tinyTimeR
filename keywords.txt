@@ -1,5 +1,6 @@
 tinyTimeR 	KEYWORD1	tinyTimeR
-tr 			KEYWORD1 	tinyTimeR
+tt 			KEYWORD1 	tinyTimeR
 begin		KEYWORD2
 end			KEYWORD2
-OnTimerExec KEYWORD2
+play		KEYWORD2
+pause		KEYWORD2

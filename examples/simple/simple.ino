@@ -1,16 +1,18 @@
 //========================================================================
 // program name : simple.ino
-// date/author  : 2022/04/24 @chromlinux03
+// date/author  : 2022/04/24 v0.0.1 @chromlinux03
+// date/update  : 2022/04/25 v0.0.2 Changed interrupt to pass a function pointer
+// github       : https://github.com/chrmlinux/tinyTimeR
+// Specifies the interrupt interval in microseconds
 //========================================================================
-#include <tinyTimeR.hpp>
-static tinyTimeR tr;
+#include "tinyTimeR.hpp"
+static tinyTimeR tt;
 #define LED_PIN (10)
 
 //=========================================
-// Processing executed when a 
-// timer interrupt is applied
+// ledOnOff
 //=========================================
-void IRAM_ATTR onTimerExec(void) {
+void ledOnOff(void) {
   digitalWrite(LED_PIN, !digitalRead(LED_PIN));
 }
 
@@ -20,7 +22,7 @@ void IRAM_ATTR onTimerExec(void) {
 void setup(void) {
   Serial.begin(115200); delay(1000);
   pinMode(LED_PIN, OUTPUT);
-  tr.begin(1000 * 100); // Specifies the interrupt interval in microseconds
+  tt.begin(ledOnOff, 1000 * 24);
 }
 
 //=========================================
